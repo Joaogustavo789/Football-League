@@ -9,6 +9,16 @@ class JWT {
       algorithm: 'HS256',
     });
   };
+
+  verifyToken = (token: string) => {
+    try {
+      const data = jwt.verify(token, process.env.JWT_SECRET as string);
+
+      return { type: null, data };
+    } catch (_e) {
+      return { type: 'UNAUTHORIZED', message: 'Invalid token' };
+    }
+  };
 }
 
 export default JWT;

@@ -19,6 +19,7 @@ class LoginService {
     }
 
     const token = this.jwt.createToken(newLogin);
+
     return { type: null, message: token };
   };
 }
