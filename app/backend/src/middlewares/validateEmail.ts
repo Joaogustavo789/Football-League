@@ -7,6 +7,7 @@ const validateEmail = (req: Request, res: Response, next: NextFunction) => {
   if (error) {
     return res.status(400).json({ message: 'All fields must be filled' });
   }
+
   next();
 };
 

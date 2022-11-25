@@ -1,19 +1,25 @@
-// import * as bcryptjs from 'bcryptjs';
+import * as bcryptjs from 'bcryptjs';
 import JWT from '../utils/jwt';
 import User from '../database/models/User.model';
-// import IUser from '../interfaces/interface';
 
 class LoginService {
-  jwt = new JWT();
+  constructor(public jwt = new JWT()) { }
+
   serviceLogin = async (email: string, password: string) => {
-    console.log(email, password);
     const newLogin = await User.findOne({ where: { email } });
 
-    // bcryptjs.hash(password, 10);
+    if (!newLogin) {
+      return { type: 'UNAUTHORIZED', message: 'Incorrect email or password' };
+    }
 
-    // const token = this.jwt.createToken(newLogin);
-    // console.log(newLogin);
-    return { type: null, message: newLogin };
+    const passwordCompare = await bcryptjs.compare(password, newLogin.password);
+
+    if (passwordCompare === false) {
+      return { type: 'UNAUTHORIZED', message: 'Incorrect email or password' };
+    }
+
+    const token = this.jwt.createToken(newLogin);
+    return { type: null, message: token };
   };
 }
 
