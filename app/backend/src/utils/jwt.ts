@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import IUser from '../interfaces/interface';
+import { IUser } from '../interfaces/interface';
 
 class JWT {
   createToken = (user: IUser) => {
