@@ -4,8 +4,17 @@ import MatchesService from '../services/matches.service';
 class MatchesController {
   constructor(public matchesService = new MatchesService()) { }
 
-  controllerMatchesGet = async (_req: Request, res: Response) => {
-    const { message } = await this.matchesService.serviceMatchesGet();
+  controllerMatchesGet = async (req: Request, res: Response) => {
+    const { inProgress } = req.query;
+
+    if (!inProgress) {
+      const { message } = await this.matchesService.serviceMatchesGet();
+      return res.status(200).json(message);
+    }
+
+    const trueOrFalse = (inProgress === 'true');
+
+    const { message } = await this.matchesService.serviceMatchesGetQuery(trueOrFalse);
 
     return res.status(200).json(message);
   };

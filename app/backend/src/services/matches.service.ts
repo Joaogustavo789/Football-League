@@ -1,26 +1,27 @@
 import Matche from '../database/models/Matche.model';
-import Team from '../database/models/Team.model';
 
 class MatchesService {
   serviceMatchesGet = async () => {
     const allMatches = await Matche.findAll({
-      include: [
-        {
-          model: Team,
-          as: 'teamHome',
-          attributes: { exclude: ['id'] },
-        },
-
-        {
-          model: Team,
-          as: 'teamAway',
-          attributes: { exclude: ['id'] },
-        },
-
-      ],
+      include: {
+        all: true,
+        attributes: { exclude: ['id'] },
+      },
     });
 
     return { type: null, message: allMatches };
+  };
+
+  serviceMatchesGetQuery = async (inProgress: boolean) => {
+    const matchesInProgress = await Matche.findAll({
+      include: {
+        all: true,
+        attributes: { exclude: ['id'] },
+      },
+      where: { inProgress },
+    });
+
+    return { type: null, message: matchesInProgress };
   };
 }
 
