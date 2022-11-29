@@ -1,4 +1,5 @@
 import Matche from '../database/models/Matche.model';
+import { IMatche } from '../interfaces/interface';
 
 class MatchesService {
   serviceMatchesGet = async () => {
@@ -22,6 +23,16 @@ class MatchesService {
     });
 
     return { type: null, message: matchesInProgress };
+  };
+
+  serviceMatchesPost = async (createMatche: IMatche) => {
+    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress } = createMatche;
+
+    const newMatche = await Matche.create({
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress,
+    });
+
+    return { type: null, message: newMatche };
   };
 }
 

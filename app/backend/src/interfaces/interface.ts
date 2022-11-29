@@ -1,9 +1,9 @@
 interface IUser {
-  id: number;
-  username: string;
+  id: number,
+  username: string,
   role: string
-  email: string;
-  password?: string;
+  email: string,
+  password?: string,
 }
 
 interface IJwtload {
@@ -15,7 +15,16 @@ interface IJwtload {
   exp: number
 }
 
+interface IMatche {
+  homeTeam: number,
+  awayTeam: number,
+  homeTeamGoals: number,
+  awayTeamGoals: number,
+  inProgress: boolean,
+}
+
 export {
   IUser,
   IJwtload,
+  IMatche,
 };

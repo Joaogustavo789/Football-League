@@ -16,7 +16,7 @@ class JWT {
 
       return { type: null, data };
     } catch (_e) {
-      return { type: 'UNAUTHORIZED', message: 'Invalid token' };
+      return { type: 'UNAUTHORIZED', message: 'Token must be a valid token' };
     }
   };
 }

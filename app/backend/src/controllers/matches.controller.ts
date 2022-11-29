@@ -18,6 +18,20 @@ class MatchesController {
 
     return res.status(200).json(message);
   };
+
+  controllerMatchesPost = async (req: Request, res: Response) => {
+    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = req.body;
+
+    const { message } = await this.matchesService.serviceMatchesPost({
+      homeTeam,
+      awayTeam,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    });
+
+    return res.status(201).json(message);
+  };
 }
 
 export default MatchesController;
