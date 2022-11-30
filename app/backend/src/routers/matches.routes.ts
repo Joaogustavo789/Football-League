@@ -10,4 +10,6 @@ matcheRouter.get('/', matchesController.controllerMatchesGet);
 
 matcheRouter.post('/', validateToken, matchesController.controllerMatchesPost);
 
+matcheRouter.patch('/:id/finish', matchesController.controllerMatchesPatch);
+
 export default matcheRouter;

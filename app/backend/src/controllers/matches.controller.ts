@@ -22,7 +22,7 @@ class MatchesController {
   controllerMatchesPost = async (req: Request, res: Response) => {
     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = req.body;
 
-    const { message } = await this.matchesService.serviceMatchesPost({
+    const { type, message } = await this.matchesService.serviceMatchesPost({
       homeTeam,
       awayTeam,
       homeTeamGoals,
@@ -30,7 +30,25 @@ class MatchesController {
       inProgress: true,
     });
 
+    if (type === 'NOT_FOUND') {
+      return res.status(404).json({ message });
+    }
+
+    if (type === 'INVALID_VALUE') {
+      return res.status(422).json({ message });
+    }
+
     return res.status(201).json(message);
+  };
+
+  controllerMatchesPatch = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const inProgress = false;
+
+    const { message } = await this.matchesService.serviceMatchesPatch(inProgress, Number(id));
+
+    return res.status(200).json({ message });
   };
 }
 
