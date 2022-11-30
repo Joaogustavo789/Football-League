@@ -50,6 +50,20 @@ class MatchesController {
 
     return res.status(200).json({ message });
   };
+
+  controllerMatchesIdPatch = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+
+    const { message } = await this.matchesService.serviceMatchesIdPatch(
+      homeTeamGoals,
+      awayTeamGoals,
+      Number(id),
+    );
+
+    return res.status(200).json(message);
+  };
 }
 
 export default MatchesController;

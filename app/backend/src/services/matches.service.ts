@@ -58,6 +58,15 @@ class MatchesService {
 
     return { type: null, message: 'Finished' };
   };
+
+  serviceMatchesIdPatch = async (homeTeamGoals: number, awayTeamGoals: number, id: number) => {
+    await Matche.update(
+      { homeTeamGoals, awayTeamGoals },
+      { where: { id } },
+    );
+
+    return { type: null, message: 'Matche updated' };
+  };
 }
 
 export default MatchesService;
