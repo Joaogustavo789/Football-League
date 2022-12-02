@@ -23,8 +23,31 @@ interface IMatche {
   inProgress: boolean,
 }
 
+interface ILeaderBoard {
+  name: string,
+  totalPoints: number,
+  totalGames: number,
+  totalVictories: number,
+  totalDraws: number,
+  totalLosses: number,
+  goalsFavor: number,
+  goalsOwn: number,
+  goalsBalance: number,
+  efficiency: string,
+}
+
+interface IVictorie {
+  victories: number,
+  draw: number,
+  losses: number,
+  goalsFavor: number,
+  goalsOwn: number,
+}
+
 export {
   IUser,
   IJwtload,
   IMatche,
+  ILeaderBoard,
+  IVictorie,
 };
