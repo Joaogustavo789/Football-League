@@ -1,9 +1,9 @@
 import Matche from '../../database/models/Matche.model';
 import Team from '../../database/models/Team.model';
-import { ILeaderBoard, IMatche } from '../../interfaces/interface';
+import { ILBoard, IMatche } from '../../interfaces/interface';
 
 class ValidateRules {
-  saveArray: ILeaderBoard[];
+  saveArray: ILBoard[];
   constructor() {
     this.saveArray = [];
   }
@@ -24,7 +24,7 @@ class ValidateRules {
     return { victories, draw, losses, favorGoals, ownGoals };
   };
 
-  returnAllMatches = () => Matche.findAll({
+  mAll = () => Matche.findAll({
     where: { inProgress: false },
     raw: true,
     include: [
@@ -33,9 +33,9 @@ class ValidateRules {
   });
 
   allTeamsAndMatches = async () => {
-    const allTeams = await Team.findAll(); const allMatches = await this.returnAllMatches();
-    allTeams.forEach((team) => {
-      const allMatchesTeam = allMatches.filter((matcheTeam) => matcheTeam.homeTeam === team.id);
+    const allT = await Team.findAll(); const allM = await this.mAll(); let arrT: ILBoard[] = [];
+    allT.forEach((team) => {
+      const allMatchesTeam = allM.filter((matcheTeam) => matcheTeam.homeTeam === team.id);
       const victoriesVerify = this.verifyVictories(allMatchesTeam);
       const object = { name: team.teamName,
         totalPoints: (victoriesVerify.victories * 3) + (victoriesVerify.draw * 1),
@@ -48,9 +48,9 @@ class ValidateRules {
         goalsBalance: victoriesVerify.favorGoals - victoriesVerify.ownGoals,
         efficiency: ((((victoriesVerify.victories * 3) + (victoriesVerify.draw * 1))
         / (allMatchesTeam.length * 3)) * 100).toFixed(2),
-      }; this.saveArray.push(object);
-    });
-    return this.saveArray;
+      }; this.saveArray.push(object); arrT = this.saveArray;
+    }); this.saveArray = [];
+    return arrT;
   };
 }
 

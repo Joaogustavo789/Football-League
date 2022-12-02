@@ -23,7 +23,7 @@ interface IMatche {
   inProgress: boolean,
 }
 
-interface ILeaderBoard {
+interface ILBoard {
   name: string,
   totalPoints: number,
   totalGames: number,
@@ -48,6 +48,6 @@ export {
   IUser,
   IJwtload,
   IMatche,
-  ILeaderBoard,
+  ILBoard,
   IVictorie,
 };

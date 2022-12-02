@@ -1,11 +1,11 @@
 import ValidateRules from './validations/validateRule';
-import { ILeaderBoard } from '../interfaces/interface';
+import { ILBoard } from '../interfaces/interface';
 
 class LeaderBoardService {
   constructor(public validateRules = new ValidateRules()) { }
   serviceLeaderboardGet = async () => {
     const informationTeam = await this.validateRules.allTeamsAndMatches();
-    informationTeam.sort((b: ILeaderBoard, a: ILeaderBoard) => {
+    informationTeam.sort((b: ILBoard, a: ILBoard) => {
       let desempate = a.totalPoints - b.totalPoints;
       if (desempate === 0) {
         desempate = a.totalVictories - b.totalVictories;
