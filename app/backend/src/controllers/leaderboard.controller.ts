@@ -4,8 +4,14 @@ import LeaderBoardService from '../services/leaderboard.service';
 class LeaderBoardController {
   constructor(public leaderBoardService = new LeaderBoardService()) { }
 
-  controllerLeaderBoardGet = async (_req: Request, res: Response) => {
-    const { message } = await this.leaderBoardService.serviceLeaderboardGet();
+  controllerLeaderBoardHomeGet = async (_req: Request, res: Response) => {
+    const { message } = await this.leaderBoardService.serviceLeaderboardHomeGet();
+
+    return res.status(200).json(message);
+  };
+
+  controllerLeaderBoardAwayGet = async (_req: Request, res: Response) => {
+    const { message } = await this.leaderBoardService.serviceLeaderBoardAwayGet();
 
     return res.status(200).json(message);
   };
