@@ -34,14 +34,9 @@ class ValiAll {
   valiVictories = (matche: IMatche[], id: number) => {
     const allHome = matche.filter((game) => game.homeTeam === id);
     const allAway = matche.filter((game) => game.awayTeam === id);
-    const homeVali = this.valiHome(matche);
-    const awayVali = this.valiAway(matche);
-    if (allHome) {
-      return homeVali;
-    }
-    if (allAway) {
-      return awayVali;
-    }
+    const homeVali = this.valiHome(allHome);
+    const awayVali = this.valiAway(allAway);
+
     return {
       victories: homeVali.victories + awayVali.victories,
       draws: homeVali.draws + awayVali.draws,
