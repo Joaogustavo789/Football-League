@@ -15,6 +15,12 @@ class LeaderBoardController {
 
     return res.status(200).json(message);
   };
+
+  controllerLeaderBoardGet = async (_req: Request, res: Response) => {
+    const { message } = await this.leaderBoardService.serviceLeaderBoardGet();
+
+    return res.status(200).json(message);
+  };
 }
 
 export default LeaderBoardController;

@@ -9,4 +9,6 @@ leaderboardRouter.get('/home', leaderBoardController.controllerLeaderBoardHomeGe
 
 leaderboardRouter.get('/away', leaderBoardController.controllerLeaderBoardAwayGet);
 
+leaderboardRouter.get('/', leaderBoardController.controllerLeaderBoardGet);
+
 export default leaderboardRouter;
