@@ -1,21 +1,7 @@
 
 # Football League
 
-Football League é uma aplicação front-end e back-end de informações sobre futebol. (Readme ainda em desenvolvimento!)
-
-<!--
-## Funcionalidades
-
-- Temas dark e light
-- Preview em tempo real
-- Modo tela cheia
-- Multiplataforma
--->
-<!--
-## Demonstração
-
-Insira um gif ou um link de alguma demonstração
--->
+Football League é uma página no qual faz o gerenciamento de informações de um campeonato de futebol. Nela foi construída o back-end que alimenta o front-end já desenvolvido, utilizando a biblioteca do `Nodejs`, o `Express` para construção da api.
 
 ## Rodando localmente
 <details>
@@ -80,22 +66,6 @@ Para rodar os testes, rode o seguinte comando
 Recebe dois números e retorna a sua soma.
 -->
 
-<!--
-## Variáveis de Ambiente
-
-Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
--->
-
-<!--
-## Aprendizados
-
-O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você superou-os?
--->
-
 ## Tecnologias e Ferramentas
 
 <br>
@@ -126,6 +96,15 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
     </tr>
   </tbody>
 </table>
+
+## Uso
+  Nesta aplicação é possível:
+- Fazer Login e AUtenticar usuário
+- Consultar times
+- Consultar partidas
+- Cadastrar partidas
+- Editar partidas
+- Consultar tabelas de classificação (Geral, Mandantes e Visitantes)
 
 ## Documentação
 
