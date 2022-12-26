@@ -99,7 +99,7 @@ Recebe dois números e retorna a sua soma.
 
 ## Uso
   Nesta aplicação é possível:
-- Fazer Login e AUtenticar usuário
+- Fazer Login e Autenticar usuário
 - Consultar times
 - Consultar partidas
 - Cadastrar partidas
