@@ -77,17 +77,17 @@ Recebe dois números e retorna a sua soma.
         <span><strong>Docker</strong></span>
         <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" />
       </td>
+        <td width="80px" align="center">
+        <span><strong>Sequelize</strong></span><br>
+        <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" />
+      </td>
       <td width="80px" align="center">
         <span><strong>Node.js</strong></span><br>
           <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
       </td>
       <td width="80px" align="center">
-        <span><strong>Express</strong></span><br>
+        <span><strong>Express.js</strong></span><br>
           <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
-      </td>
-      <td width="80px" align="center">
-        <span><strong>Sequelize</strong></span><br>
-        <img height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" />
       </td>
       <td width="80px" align="center">
         <span><strong>TypeScript</strong></span><br>
