@@ -1,7 +1,7 @@
 
 # Football League
 
-Football League é uma página no qual faz o gerenciamento de informações de um campeonato de futebol. Nela foi construída o back-end que alimenta o front-end já desenvolvido, utilizando a biblioteca do `Nodejs`, o `Express` para construção da API.
+Football League é uma página no qual faz o gerenciamento de informações de um campeonato de futebol. Nela foi construída o back-end que alimenta o front-end já desenvolvido, utilizando a biblioteca do `Nodejs`, o `Express.js` para construção da API.
 
 ## Rodando localmente
 <details>
