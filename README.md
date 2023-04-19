@@ -40,6 +40,8 @@ Para rodar os testes, rode o seguinte comando
 
 
 ## Documentação da API
+<details>
+  <summary>Clique para expandir</summary>
 
 ### Login
 
@@ -1092,6 +1094,7 @@ Para rodar os testes, rode o seguinte comando
   }
 ]
 ```
+</details>
 </details>
 
 ## Tecnologias e Ferramentas
