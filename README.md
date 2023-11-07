@@ -20,10 +20,10 @@ Entre no diretório do projeto
 
 ```
 
-Instale as dependências
+Crie as imagens e os containers `Docker` para funcionar
 
 ```bash
-  npm install
+  npm run compose:up:dev
 ```
 </details>
 
